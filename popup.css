@@ -1,99 +1,89 @@
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, readable font */
-  background-color: #f4f7f6; /* Light, soft background for the body */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
   margin: 0;
   padding: 0;
 }
-
 .container {
-  width: 300px; /* Slightly wider for better spacing */
-  background-color: #ffffff; /* White background for the container */
-  border-radius: 10px; /* Softer, rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  color: #314d3e; /* Your original dark green, still good for text */
-  overflow: hidden; /* Ensures rounded corners clip content */
+  width: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: #314d3e;
+  overflow: hidden;
 }
-
 .title {
-  font-size: 16px; /* Slightly larger and more prominent */
-  font-weight: 600; /* A bit less bold, more refined */
-  padding: 12px 15px; /* More generous padding */
-  background-color: #eaf1ee; /* Light background for the title section */
-  border-bottom: 1px solid #dcdcdc; /* Subtle separator */
-  color: #2c3e50; /* Darker, more professional title color */
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 15px;
+  background-color: #eaf1ee;
+  border-bottom: 1px solid #dcdcdc;
+  color: #2c3e50;
+  font-style: italic;
 }
-
 .textbox {
-  width: calc(100% - 20px); /* Account for padding */
+  width: calc(100% - 20px);
   font-size: 13px;
-  margin: 10px; /* Add margin around the textbox */
-  padding: 8px 10px; /* Comfortable padding inside */
-  border: 1px solid #ccc; /* Softer border */
-  border-radius: 5px; /* Slightly rounded corners */
-  box-sizing: border-box; /* Include padding and border in width */
-  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for focus */
+  margin: 10px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-
 .textbox:focus {
-  outline: none; /* Remove default outline */
-  border-color: #5cb3fd; /* A more vibrant blue for focus */
-  box-shadow: 0 0 0 3px rgba(81, 191, 252, 0.25); /* Soft glowing effect on focus */
+  outline: none;
+  border-color: #5cb3fd;
+  box-shadow: 0 0 0 3px rgba(81, 191, 252, 0.25);
 }
-
 .bookmarks {
-  margin: 0; /* Remove outer margin to let padding define spacing */
-  padding: 10px 15px; /* Consistent padding with title */
-  max-height: 300px; /* Example: set a max height for scrollability */
-  overflow-y: auto; /* Enable scrolling if many bookmarks */
+  margin: 0;
+  padding: 10px 15px;
+  max-height: 300px;
+  overflow-y: auto;
 }
-
 .bookmark {
   display: flex;
-  align-items: center; /* Vertically align items */
-  padding: 10px; /* Increased padding */
-  margin-bottom: 8px; /* Consistent spacing between bookmarks */
-  border-bottom: none; /* Remove individual bottom border from each bookmark */
-  border-radius: 8px; /* Softly rounded corners for each bookmark item */
-  background-color: #fcfcfc; /* Very light background for bookmark items */
-  transition: background-color 0.2s ease; /* Smooth hover effect */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle shadow for each bookmark */
-}
-
-.bookmark:last-child {
-  margin-bottom: 0; /* No margin for the last bookmark */
-}
-
-.bookmark:hover {
-  background-color: #eef5f3; /* Light highlight on hover */
-}
-
-.bookmark-title {
-  flex-grow: 1; /* Allows title to take up available space */
-  padding-left: 10px; /* More padding to separate from potential icon */
-  font-size: 14px;
-  color: #333; /* Slightly softer black for title */
-  white-space: nowrap; /* Prevents title from wrapping */
-  overflow: hidden; /* Hides overflowed text */
-  text-overflow: ellipsis; /* Adds "..." for overflowed text */
-}
-
-.bookmark-controls {
-  flex-shrink: 0; /* Prevents controls from shrinking */
-  display: flex; /* Use flexbox for controls for better alignment */
   align-items: center;
-  margin-left: 10px; /* Space between title and controls */
+  padding: 10px;
+  margin-bottom: 8px;
+  border-bottom: none;
+  border-radius: 8px;
+  background-color: #fcfcfc;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
-
+.bookmark:last-child {
+  margin-bottom: 0;
+}
+.bookmark:hover {
+  background-color: #eef5f3;
+}
+.bookmark-title {
+  flex-grow: 1;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-style: italic;
+}
+.bookmark-controls {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
 .bookmark-controls img {
-  margin: 0 6px; /* Increased margin between control icons */
-  width: 20px; /* Slightly larger icons for easier clicking */
+  margin: 0 6px;
+  width: 20px;
   height: 20px;
   cursor: pointer;
-  opacity: 0.7; /* Slightly faded when not hovered */
-  transition: opacity 0.2s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
-
 .bookmark-controls img:hover {
-  opacity: 1; /* Fully opaque on hover */
-  transform: scale(1.1); /* Slight zoom effect on hover */
+  opacity: 1;
+  transform: scale(1.1);
 }
