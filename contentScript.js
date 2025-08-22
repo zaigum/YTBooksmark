@@ -2,7 +2,6 @@
     let youtubeLeftControls, youtubePlayer;
     let currentVideo = "";
     let currentVideoBookmarks = [];
-
     const fetchBookmarks = () => {
         return new Promise((resolve) => {
             chrome.storage.sync.get([currentVideo], (obj) => {
@@ -17,9 +16,7 @@
             time: currentTime,
             desc: "Bookmark at " + getTime(currentTime),
         };
-
         currentVideoBookmarks = await fetchBookmarks();
-
         chrome.storage.sync.set({
             [currentVideo]: JSON.stringify([...currentVideoBookmarks, newBookmark].sort((a, b) => a.time - b.time))
         });
